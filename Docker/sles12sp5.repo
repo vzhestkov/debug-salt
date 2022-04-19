@@ -1,0 +1,6 @@
+[sles12sp5]
+name=sles12sp5
+enabled=1
+autorefresh=0
+baseurl=http://download.suse.de/ibs/SUSE/Products/SLE-SERVER/12-SP5/x86_64/product/
+type=rpm-md
