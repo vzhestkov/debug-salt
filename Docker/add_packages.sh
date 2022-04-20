@@ -1,8 +1,10 @@
 #!/bin/bash
 set -e
 
+zypper rr Test-Channel-x86_64 || :
+
 # temporarily disable non-working repo
-zypper mr --disable Test-Channel-x86_64 || :
+#zypper mr --disable Test-Channel-x86_64 || :
 zypper --non-interactive --gpg-auto-import-keys ref
 
 # install, configure, and start avahi
@@ -11,9 +13,9 @@ cp /root/avahi-daemon.conf /etc/avahi/avahi-daemon.conf
 /usr/sbin/avahi-daemon -D
 
 # re-enable normal repo and remove helper repo
-zypper mr --enable Test-Channel-x86_64 || :
-zypper rr sles12sp5
+#zypper mr --enable Test-Channel-x86_64 || :
+#zypper rr sles12sp5
 
 # do the real test
 zypper --non-interactive --gpg-auto-import-keys ref
-zypper --non-interactive in aaa_base aaa_base-extras net-tools timezone vim less sudo tar python3 python3-xml
+zypper --non-interactive in aaa_base aaa_base-extras net-tools timezone vim less sudo tar
