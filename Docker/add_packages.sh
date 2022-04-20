@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+echo "172.16.82.150 vz-uyuni-srv.tf.local vz-uyuni-srv" > /etc/hosts
+
 zypper rr Test-Channel-x86_64 || :
 
 # temporarily disable non-working repo
