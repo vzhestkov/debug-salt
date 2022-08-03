@@ -14,3 +14,5 @@ ADD sles15sp2.repo /etc/zypp/repos.d/sles15sp2.repo
 
 ADD add_packages.sh /root/add_packages.sh
 RUN /root/add_packages.sh
+
+ENTRYPOINT /usr/bin/bash
